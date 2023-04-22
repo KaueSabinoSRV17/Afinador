@@ -29,5 +29,18 @@ void main() {
       expect(systemUnderTest.octave, octave);
 
     });
+
   });
+
+  test('A non exact note frequence should evaluate to its closest exact frequence note', () {
+    systemUnderTest = MusicalNote(430);
+    expect(systemUnderTest.noteLetter, 'A');
+    expect(systemUnderTest.octave, 4);
+
+
+    systemUnderTest = MusicalNote(420);
+    expect(systemUnderTest.noteLetter, 'G#');
+    expect(systemUnderTest.octave, 4);
+  });
+
 }
