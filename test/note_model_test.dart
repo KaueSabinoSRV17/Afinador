@@ -27,6 +27,9 @@ void main() {
 
       expect(systemUnderTest.noteLetter, letter);
       expect(systemUnderTest.octave, octave);
+      expect(systemUnderTest.inTune, true);
+      expect(systemUnderTest.tooBass, false);
+      expect(systemUnderTest.tooTreble, false);
 
     });
 
@@ -36,11 +39,17 @@ void main() {
     systemUnderTest = MusicalNote(430);
     expect(systemUnderTest.noteLetter, 'A');
     expect(systemUnderTest.octave, 4);
+    expect(systemUnderTest.inTune, false);
+    expect(systemUnderTest.tooBass, true);
+    expect(systemUnderTest.tooTreble, false);
 
-
-    systemUnderTest = MusicalNote(420);
+    systemUnderTest = MusicalNote(425);
     expect(systemUnderTest.noteLetter, 'G#');
     expect(systemUnderTest.octave, 4);
+    expect(systemUnderTest.inTune, false);
+    expect(systemUnderTest.tooBass, false);
+    expect(systemUnderTest.tooTreble, true);
+
   });
 
 }
